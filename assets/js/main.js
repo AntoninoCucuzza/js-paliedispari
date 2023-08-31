@@ -6,11 +6,11 @@ L’utente sceglie pari o dispari e inserisce un numero da 1 a 5.
 Generiamo un numero random (sempre da 1 a 5) per il computer (usando una funzione). Sommiamo i due numeri Stabiliamo se la somma dei due numeri è pari o dispari (usando una funzione) Dichiariamo chi ha vinto.
 
 */
-const pari_dispari = 'pari' //prompt('scegli tra pari o dispari')
+const pari_dispari = prompt('scegli tra pari o dispari')
 console.log(pari_dispari);
 
 
-const userN = 1 //Number(prompt('scegli un numero da 1 a 5'))
+const userN = Number(prompt('scegli un numero da 1 a 5'))
 console.log(userN);
 
 function randomN() {
@@ -49,11 +49,8 @@ Chiedere all’utente di inserire una parola Creare una funzione per capire se l
 
 */
 
-const userWord = 'otto' //prompt('inserisci una parola palindroma')
-console.log(userWord.length);
-
-
-// Function to reverse string
+const userWord = prompt('inserisci una parola palindroma')
+//console.log(userWord);
 
 /**
  * ## scrittura inversa delle parole 
@@ -84,7 +81,7 @@ console.log(userWord.length);
  * @param {parola} userWord 
  * @returns  esempio: botto / ottob
  */
-function testPalindromo() {
+ function testPalindromo() {
     return userWord.split('').reverse().join('')
 } 
 console.log(testPalindromo(userWord))
