@@ -6,11 +6,11 @@ L’utente sceglie pari o dispari e inserisce un numero da 1 a 5.
 Generiamo un numero random (sempre da 1 a 5) per il computer (usando una funzione). Sommiamo i due numeri Stabiliamo se la somma dei due numeri è pari o dispari (usando una funzione) Dichiariamo chi ha vinto.
 
 */
-const pari_dispari = prompt('scegli tra pari o dispari')
+const pari_dispari = 'pari' //prompt('scegli tra pari o dispari')
 console.log(pari_dispari);
 
 
-const userN = Number(prompt('scegli un numero da 1 a 5'))
+const userN = 1 //Number(prompt('scegli un numero da 1 a 5'))
 console.log(userN);
 
 function randomN() {
@@ -49,7 +49,7 @@ Chiedere all’utente di inserire una parola Creare una funzione per capire se l
 
 */
 
-const userWord = prompt('inserisci una parola palindroma')
+//const userWord = 'botto' prompt('inserisci una parola palindroma')
 //console.log(userWord);
 
 /**
@@ -81,10 +81,10 @@ const userWord = prompt('inserisci una parola palindroma')
  * @param {parola} userWord 
  * @returns  esempio: botto / ottob
  */
- function testPalindromo() {
+/*  function testPalindromo() {
     return userWord.split('').reverse().join('')
-} 
-console.log(testPalindromo(userWord))
+}  */
+/* console.log(testPalindromo(userWord))
 
 if(userWord === testPalindromo(userWord)) {
     console.log('la parola inserita e palindroma');
@@ -92,3 +92,29 @@ if(userWord === testPalindromo(userWord)) {
     alert('la parola inserita non e palindroma')
 }
 
+*/
+
+const userWord = 'otto'
+
+const userWordArray = []
+
+
+for (let i = 0; i < userWord.length; i++) {
+    const lettera = userWord[i];
+    //console.log(lettera);
+    userWordArray.push(lettera)
+    //console.log(userWordArray);
+}
+
+console.log(userWordArray);
+
+
+const reverseUserWordArray = []
+
+for (let i = userWordArray.length - 1; i >= 0 ; i--) {
+    const lettera = userWordArray[i]
+    reverseUserWordArray.push(lettera)
+    
+}
+
+console.log(reverseUserWordArray );
