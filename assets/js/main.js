@@ -6,40 +6,57 @@ L’utente sceglie pari o dispari e inserisce un numero da 1 a 5.
 Generiamo un numero random (sempre da 1 a 5) per il computer (usando una funzione). Sommiamo i due numeri Stabiliamo se la somma dei due numeri è pari o dispari (usando una funzione) Dichiariamo chi ha vinto.
 
 */
-const pari_dispari = 'pari' //prompt('scegli tra pari o dispari')
-console.log(pari_dispari);
 
 
-const userN = 1 //Number(prompt('scegli un numero da 1 a 5'))
-console.log(userN);
-
-function randomN() {
-    let randomPc = Math.floor(Math.random() * 5 + 1);
-    console.log(randomPc);
-    return randomPc;
-}
-
-const somma = userN + (randomN());
-console.log(somma);
-
-if(pari_dispari === 'pari'){
+document.getElementById('conferma').addEventListener('click', function(e){
+    e.preventDefault();
     
-    if(somma % 2 === 0){
-        console.log('hai vinto');
-    } else {
-        console.log('Il risultato e dispari');
-    }
 
-}else if(pari_dispari === 'dispari'){
+    const pari_dispari = document.getElementById('input_paridispari').value.toLowerCase();
+    console.log(`hai selezionato ${pari_dispari}`);
+  
+    
+    const userN = Number(document.getElementById('input_numero').value)
+    console.log(`hai selezionato ${userN}`);
 
-    if(somma % 2 === 0){
-        console.log('Il risultato e pari');
-    } else {
-        console.log('hai vinto');
+
+    function randomN() {
+        let randomPc = Math.floor(Math.random() * 5 + 1);
+        console.log(`il pc ha scelto ${randomPc}`);
+        return randomPc;
     }
-}else{
-    alert('inserisci pari o dispari')
-}
+    
+    const somma = userN + (randomN());
+    console.log(`la somma dei numeri scelti e ${somma}`);
+
+    
+    if(pari_dispari === 'pari'){
+        if(somma % 2 === 0){
+            alert(`${somma} e un numero pari quindi hai vinto`)
+
+        } else {
+            alert(`${somma} non e un numero pari quindi hai perso`)
+        }
+    
+    }else if(pari_dispari === 'dispari'){
+    
+        if(somma % 2 === 0){
+            alert(`${somma} e un numero pari quindi hai perso`)
+
+        } else {
+            alert(`${somma} e un numero dispari quindi hai vinto`)
+            
+        }
+    }else{
+        alert('inserisci pari o dispari')
+    }
+})
+
+//const pari_dispari = 'pari' //prompt('scegli tra pari o dispari')
+
+//const userN = 1 //Number(prompt('scegli un numero da 1 a 5'))
+
+
 
 console.log('####################################################');
 /* 
@@ -48,6 +65,8 @@ console.log('####################################################');
 Chiedere all’utente di inserire una parola Creare una funzione per capire se la parola inserita è palindroma
 
 */
+
+//👇 versione con i cheat
 
 //const userWord = 'botto' prompt('inserisci una parola palindroma')
 //console.log(userWord);
@@ -93,28 +112,48 @@ if(userWord === testPalindromo(userWord)) {
 }
 
 */
+document.getElementById('conferma_parola').addEventListener('click', function(e){
 
-const userWord = 'otto'
+    const userWord = document.getElementById('input_userword').value.toLowerCase();
 
-const userWordArray = []
-
-
-for (let i = 0; i < userWord.length; i++) {
-    const lettera = userWord[i];
-    //console.log(lettera);
-    userWordArray.push(lettera)
-    //console.log(userWordArray);
-}
-
-console.log(userWordArray);
+    const userWordArray = []
 
 
-const reverseUserWordArray = []
+    for (let i = 0; i < userWord.length; i++) {
+        const lettera = userWord[i];
+        //console.log(lettera);
+        userWordArray.push(lettera)
+        //console.log(userWordArray);
+    }
 
-for (let i = userWordArray.length - 1; i >= 0 ; i--) {
-    const lettera = userWordArray[i]
-    reverseUserWordArray.push(lettera)
-    
-}
+    console.log(userWordArray);
 
-console.log(reverseUserWordArray );
+
+    const reverseUserWordArray = []
+
+    for (let i = userWordArray.length - 1; i >= 0 ; i--) {
+        const lettera = userWordArray[i]
+        reverseUserWordArray.push(lettera)
+        
+    }
+
+    console.log(reverseUserWordArray );
+
+    function testPalindromo(userWordArray, reverseUserWordArray) {
+        for (let i = 0; i < userWordArray.length; i++) {
+            if (userWordArray[i] != reverseUserWordArray[i]) {
+                return false;
+            }
+        }
+        return true;
+    }
+
+
+    if (testPalindromo(reverseUserWordArray, userWordArray)) {
+        alert(`La parola ${userWord} e una parola palindroma`)
+
+    } else {
+        alert(`La parola ${userWord} non e una parola palindroma`)
+    }
+
+})

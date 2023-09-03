@@ -4,16 +4,42 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>js-paliedispari</title>
+    <link rel="stylesheet" href="./assets/css/style.css">
 </head>
 <body>
 
-    <button id="">pari</button>
-    <button id="" >dispari</button> 
 
-    <input type="text" id="user_input">
-    <button id="conferma"> conferma</button>
+    <div class="container mt-3">
+        
+        <select id="input_paridispari">
+            <option>pari</option>
+            <option>dispari</option>
+        </select>   
+    
+        
+        <select id="input_numero">
+            <option>1</option>
+            <option>2</option>
+            <option>3</option>
+            <option>4</option>
+            <option>5</option>
+            
+        </select>
+    
+    
+        <button id='conferma'>conferma</button>
 
-    <p>Lorem, ipsum.</p>
+    </div>    
+
+    <div class="container mt-3">
+        
+        <input type="text" id="input_userword" placeholder="inserisci una parola palindroma">
+    
+        <button id='conferma_parola'>conferma</button>
+    </div>
+
+
+
 
 
     <script type="text/javascript" src="./assets/js/main.js"></script>
